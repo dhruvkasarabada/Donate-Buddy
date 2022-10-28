@@ -1,0 +1,79 @@
+DeliveryAgentDeliveryCountScreen As screen:
+    Fill: =RGBA(215, 223, 240, 1)
+
+    CompositeLineChart1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+        Title6 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =51
+            Size: =26
+            Text: ="Delivery Agent Delivery Counts"
+            Width: =638
+            X: =2
+            Y: =153
+            ZIndex: =2
+
+        LineChart1 As lineChart:
+            Font: =Font.'Open Sans'
+            Height: =779
+            Items: =DonationsWithDeliveryAgentNamesGrouped
+            Width: =638
+            X: =2
+            Y: =210
+            ZIndex: =3
+
+        Legend4 As legend:
+            Height: =161
+            ItemColorSet: =LineChart1.ItemColorSet
+            Items: =LineChart1.SeriesLabels
+            Size: =18
+            Visible: =false
+            Width: =521
+            X: =68
+            Y: =153
+            ZIndex: =4
+
+    RectQuickActionBar9_3 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =5
+
+    IconBackarrow1_13 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(DonorDonationCountsReportScreen)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Back to list"
+        Width: =88
+        X: =2
+        ZIndex: =6
+
+    IconBackarrow1_14 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(CollectionCenterDeliveryCountReportScreen, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        Rotation: =180
+        TabIndex: =0
+        Tooltip: ="Back to list"
+        Width: =88
+        X: =552
+        ZIndex: =7
+

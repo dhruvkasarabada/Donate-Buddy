@@ -1,0 +1,249 @@
+VolunteerDetailScreen As screen:
+    BackgroundImage: =
+    Fill: =RGBA(215, 223, 240, 1)
+
+    VolunteerViewForm As formViewer:
+        DataSource: =Volunteers
+        Height: =1042
+        Item: =VolunteerBrowseGallery.Selected
+        Width: =640
+        Y: =92
+        ZIndex: =1
+
+        Name_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="crf80_name"
+            Default: =ThisItem.Name
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Volunteers],DataSourceInfo.DisplayName,"crf80_name")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =true
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey5 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue5 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                ZIndex: =2
+
+        Image_DataCard1 As typedDataCard.largeImageViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="crd95_image"
+            Default: =ThisItem.Image
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Volunteers],DataSourceInfo.DisplayName,"crd95_image")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey11 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue11 As image:
+                DisplayMode: =Parent.DisplayMode
+                Height: =320
+                Image: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey11.Y + DataCardKey11.Height + 5
+                ZIndex: =2
+
+        "'E-Mail_DataCard2' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="crf80_email"
+            Default: =ThisItem.'E-Mail'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Volunteers],DataSourceInfo.DisplayName,"crf80_email")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =true
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey32 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue29 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey32.Y + DataCardKey32.Height + 5
+                ZIndex: =2
+
+        Role_DataCard2 As typedDataCard.comboBoxOptionSetSingleViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="crf80_role"
+            Default: =ThisItem.Role
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Volunteers],DataSourceInfo.DisplayName,"crf80_role")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue12.Selected
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey12 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue12 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices(Role)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey12.Y + DataCardKey12.Height + 5
+                ZIndex: =2
+
+            ErrorMessage5 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue12.Y + DataCardValue12.Height
+                ZIndex: =3
+
+            StarVisible5 As label:
+                Align: =Align.Center
+                Height: =DataCardKey12.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey12.Y
+                ZIndex: =4
+
+    IconBackarrow1_1 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(VolunteerBrowserScreen, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Back to list"
+        Width: =88
+        ZIndex: =2
+
+    IconEdit1_1 As icon.Edit:
+        AccessibleLabel: =Self.Tooltip
+        DisplayMode: =If(DataSourceInfo([@Volunteers], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Icon: =Icon.Edit
+        OnSelect: =EditForm(VolunteerEditForm);Navigate(VolunteerEditScreen, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Edit this item"
+        Width: =88
+        X: =Parent.Width - Self.Width
+        ZIndex: =3
+
+    LblAppName2_1 As label:
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Size: =27
+        Text: ="Volunteer Info"
+        Width: =376
+        Wrap: =false
+        X: =88
+        ZIndex: =5
+
+    IconDeleteVolunteer As icon.Trash:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Icon: =Icon.Trash
+        OnSelect: =Remove(Volunteers, VolunteerBrowseGallery.Selected); If (IsEmpty(Errors(Volunteers, VolunteerBrowseGallery.Selected)), Back())
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        Width: =88
+        X: =464
+        ZIndex: =6
+

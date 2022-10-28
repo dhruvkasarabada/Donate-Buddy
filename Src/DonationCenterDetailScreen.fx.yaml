@@ -1,0 +1,375 @@
+DonationCenterDetailScreen As screen:
+    Fill: =RGBA(215, 223, 240, 1)
+    OnVisible: |-
+        =Set(dcLocation,BingMaps.GetLocationByAddress({addressLine: DonationCenterBrowseGallery.Selected.Street, locality:DonationCenterBrowseGallery.Selected.City, adminDistrict:DonationCenterBrowseGallery.Selected.State}))
+
+    DonationCenterViewForm As formViewer:
+        DataSource: ='Donation Destinations'
+        Height: =999
+        Item: =DonationCenterBrowseGallery.Selected
+        Width: =640
+        Y: =117
+        ZIndex: =1
+
+        "'Drive Name_DataCard2' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="crd95_DriveName"
+            Default: =ThisItem.'Drive Name'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Donation Destinations'],DataSourceInfo.DisplayName,"crd95_DriveName")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue27.Selected
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey29 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue27 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["crd95_name"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@'Donation Destinations'].crd95_DriveName)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["crd95_name"]
+                SearchItems: =Search(Choices([@'Donation Destinations'].crd95_DriveName),DataCardValue27.SearchText,"crd95_name")
+                SelectMultiple: =false
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey29.Y + DataCardKey29.Height + 5
+                ZIndex: =2
+
+            ErrorMessage25 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue27.Y + DataCardValue27.Height
+                ZIndex: =3
+
+            StarVisible25 As label:
+                Align: =Align.Center
+                Height: =DataCardKey29.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey29.Y
+                ZIndex: =4
+
+        Street_DataCard3 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="crd95_street"
+            Default: =ThisItem.Street
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Donation Destinations'],DataSourceInfo.DisplayName,"crd95_street")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey58 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue53 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey58.Y + DataCardKey58.Height + 5
+                ZIndex: =2
+
+        City_DataCard3 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="crd95_city"
+            Default: =ThisItem.City
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Donation Destinations'],DataSourceInfo.DisplayName,"crd95_city")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =104
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey53 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue47 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey53.Y + DataCardKey53.Height + 5
+                ZIndex: =2
+
+        State_DataCard3 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="crd95_state"
+            Default: =ThisItem.State
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Donation Destinations'],DataSourceInfo.DisplayName,"crd95_state")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey56 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =33
+                ZIndex: =1
+
+            DataCardValue51 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey56.Y + DataCardKey56.Height + 5
+                ZIndex: =2
+
+        Country_DataCard3 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="crd95_country"
+            Default: =ThisItem.Country
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Donation Destinations'],DataSourceInfo.DisplayName,"crd95_country")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey54 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue48 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey54.Y + DataCardKey54.Height + 5
+                ZIndex: =2
+
+        "'Postal code_DataCard1' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="crd95_postalcode"
+            Default: =ThisItem.'Postal code'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Donation Destinations'],DataSourceInfo.DisplayName,"crd95_postalcode")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey55 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue49 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey55.Y + DataCardKey55.Height + 5
+                ZIndex: =2
+
+        Name_DataCard7 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="crd95_name"
+            Default: =ThisItem.Name
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Donation Drives'],DataSourceInfo.DisplayName,"crd95_name")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =true
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+            DataCardKey22 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue22 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey22.Y + DataCardKey22.Height + 5
+                ZIndex: =2
+
+    IconBackarrow1_3 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(DonationCenterBrowserScreen, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Back to list"
+        Width: =88
+        ZIndex: =2
+
+    IconEdit1_2 As icon.Edit:
+        AccessibleLabel: =Self.Tooltip
+        DisplayMode: =If(DataSourceInfo([@'Donation Destinations'], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Icon: =Icon.Edit
+        OnSelect: =EditForm(DonationCenterEditForm);Navigate(DonationCenterEditScreen, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Edit this item"
+        Width: =88
+        X: =Parent.Width - Self.Width
+        ZIndex: =3
+
+    IconDeleteDonationDestination As icon.Trash:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Icon: =Icon.Trash
+        OnSelect: =Remove('Donation Destinations', DonationCenterBrowseGallery.Selected); If (IsEmpty(Errors('Donation Destinations', DonationCenterBrowseGallery.Selected)), Back())
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        Width: =88
+        X: =464
+        ZIndex: =6
+
+    LblAppName2_2 As label:
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Size: =25
+        Text: ="Donation Center Info"
+        Width: =376
+        Wrap: =false
+        X: =88
+        ZIndex: =7
+
+    Image7 As image:
+        Height: =356
+        Image: |-
+            =BingMaps.GetMapV2("Road", 15, dcLocation.point.coordinates.latitude, dcLocation.point.coordinates.longitude, {pushpinLatitude:dcLocation.point.coordinates.latitude, pushpinLongitude:dcLocation.point.coordinates.longitude})
+        Width: =390
+        X: =230
+        Y: =545
+        ZIndex: =8
+

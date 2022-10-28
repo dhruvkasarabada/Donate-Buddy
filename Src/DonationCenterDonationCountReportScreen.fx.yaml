@@ -1,0 +1,61 @@
+DonationCenterDonationCountReportScreen As screen:
+    Fill: =RGBA(215, 223, 240, 1)
+
+    CompositeColumnChart5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+        Title7 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =36
+            Size: =26
+            Text: ="Donation Center Donation Counts"
+            Width: =638
+            X: =2
+            Y: =146
+            ZIndex: =2
+
+        ColumnChart5 As barChart:
+            Height: =582
+            Items: =DonationsWithDonationCenterNamesGrouped
+            Width: =638
+            X: =2
+            Y: =190
+            ZIndex: =3
+
+        Legend5 As legend:
+            Height: =114
+            ItemColorSet: =ColumnChart5.ItemColorSet
+            Items: =ColumnChart5.SeriesLabels
+            Size: =18
+            Visible: =false
+            Width: =522
+            X: =67
+            Y: =781
+            ZIndex: =4
+
+    RectQuickActionBar9_4 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =5
+
+    IconBackarrow1_15 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(CollectionCenterDeliveryCountReportScreen)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Back to list"
+        Width: =88
+        X: =2
+        ZIndex: =6
+

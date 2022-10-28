@@ -1,0 +1,14 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |
+        =Set(myRole, Text(If(IsBlank(LookUp(Volunteers,'E-Mail'=User().Email).Role), "Donation Volunteer", LookUp(Volunteers,'E-Mail'=User().Email).Role)));
+        
+        Set(currentUser, User());
+        
+        If(IsBlank(LookUp(Volunteers,'E-Mail'=User().Email).Role), 
+        Patch(
+            Volunteers,
+            Defaults(Volunteers),
+            {Name: User().FullName, 'E-Mail': User().Email, Role: Role.'Donation Volunteer'}))
+    StartScreen: =If(Text(LookUp(Volunteers,'E-Mail'=User().Email).Role)="Organizer",WelcomeOrganizerScreen, WelcomeDonationVolunteerScreen)
+

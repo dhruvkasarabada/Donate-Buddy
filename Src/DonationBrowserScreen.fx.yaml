@@ -1,0 +1,293 @@
+"DonationBrowserScreen As screen.'phoneLayout_HeaderAndGallery_ver3.0'":
+    Fill: =RGBA(215, 223, 240, 1)
+    OnVisible: =
+
+    RectQuickActionBar7 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName7 As label:
+        Height: =88
+        Size: =27
+        Text: ="Donations"
+        Width: =Parent.Width - LblAppName7.X - IconSortUpDown5.Width - IconNewItem5.Width - IconRefresh5.Width
+        Wrap: =false
+        X: =88
+        ZIndex: =2
+
+    IconRefresh5 As icon.Reload:
+        AccessibleLabel: =IconRefresh5.Tooltip
+        Height: =88
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([@'Donation Drives'])
+        PaddingBottom: =22
+        PaddingLeft: =22
+        PaddingRight: =22
+        PaddingTop: =22
+        TabIndex: =0
+        Tooltip: ="Refresh list"
+        Width: =88
+        X: =376
+        ZIndex: =3
+
+    IconSortUpDown5 As icon.ArrowsUpDown:
+        AccessibleLabel: =IconSortUpDown5.Tooltip
+        Height: =88
+        Icon: =Icon.Sort
+        OnSelect: |-
+            =UpdateContext({SortDescending1: !SortDescending1})
+        PaddingBottom: =26
+        PaddingLeft: =26
+        PaddingRight: =26
+        PaddingTop: =26
+        TabIndex: =0
+        Tooltip: =If(SortDescending1, "Sort list in reverse alphabetical order", "Sort list in alphabetical order")
+        Width: =88
+        X: =464
+        ZIndex: =4
+
+    IconNewItem5 As icon.Add:
+        AccessibleLabel: =IconNewItem5.Tooltip
+        Height: =88
+        Icon: =Icon.Add
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Create new item"
+        Visible: =false
+        Width: =88
+        X: =397
+        Y: =113
+        ZIndex: =5
+
+    TextSearchBox5 As text:
+        Align: =Left
+        Default: =
+        Height: =68
+        HintText: ="Search items"
+        PaddingLeft: =70
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =7
+        RadiusTopLeft: =0
+        RadiusTopRight: =7
+        Size: =21
+        Width: =640
+        Y: =RectQuickActionBar7.Height
+        ZIndex: =6
+
+    SearchIcon5 As icon.Search:
+        Height: =SearchIcon5.Width
+        Icon: =Icon.Search
+        PaddingBottom: =14
+        PaddingLeft: =14
+        PaddingRight: =14
+        PaddingTop: =14
+        Tooltip: ="Search"
+        Width: =TextSearchBox5.Height
+        X: =TextSearchBox5.X
+        Y: =TextSearchBox5.Y
+        ZIndex: =7
+
+    Rectangle15 As rectangle:
+        Height: =2
+        Width: =Parent.Width
+        Y: =TextSearchBox5.Y + TextSearchBox5.Height
+        ZIndex: =8
+
+    IconBackarrow1_7 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(DonationDriveBrowserScreen)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Back to list"
+        Width: =88
+        ZIndex: =10
+
+    IconNewItem2_1 As icon.Add:
+        AccessibleLabel: =IconNewItem2_1.Tooltip
+        Height: =88
+        Icon: =Icon.Add
+        OnSelect: =NewForm(DonationEditForm);Navigate(DonationEditScreen, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Create new item"
+        Width: =88
+        X: =552
+        ZIndex: =11
+
+    "DonationBrowseGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =978
+        Items: =Search(Filter(Donations, 'Drive Name'.Name=driveName), TextSearchBox5.Text, "crd95_name", "crd95_comments")
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =665
+        Y: =158
+        ZIndex: =12
+
+        "'Donation Item Image' As image":
+            Height: =220
+            Image: =ThisItem.Image
+            OnSelect: =Select(Parent)
+            Width: =307
+            X: =153
+            Y: =59
+            ZIndex: =1
+
+        "'Donation Item Name' As label":
+            Height: =44
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Name
+            VerticalAlign: =VerticalAlign.Top
+            Width: =429
+            X: =128
+            Y: =15
+            ZIndex: =2
+
+        "'Donated On' As label":
+            FontWeight: =FontWeight.Semibold
+            Height: =33
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: |-
+                ="Donation Date: " & ThisItem.'Donation Center Delivery Time'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =594
+            X: =26
+            Y: =447
+            ZIndex: =3
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate(DonationDetailScreen)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =580
+            Y: =265
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =640
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Comments As label:
+            Font: =Font.'Dancing Script'
+            FontWeight: =FontWeight.Normal
+            Height: =75
+            Italic: =true
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Comments
+            VerticalAlign: =VerticalAlign.Top
+            Width: =566
+            X: =39
+            Y: =590
+            ZIndex: =7
+
+        Id As label:
+            Height: =44
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="#" & ThisItem.Id
+            VerticalAlign: =VerticalAlign.Top
+            Width: =86
+            X: =16
+            Y: =15
+            ZIndex: =8
+
+        Donator As label:
+            Height: =42
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Donator: " & ThisItem.Donator.Name
+            VerticalAlign: =VerticalAlign.Top
+            Width: =578
+            X: =27
+            Y: =304
+            ZIndex: =9
+
+        Destination As label:
+            Height: =61
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Donation Center: " & ThisItem.'Donation Center'.Name
+            VerticalAlign: =VerticalAlign.Top
+            Width: =594
+            X: =26
+            Y: =496
+            ZIndex: =11
+
+        "'Delivery Agent' As label":
+            Height: =36
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Delivery Agent: " & ThisItem.'Delivery Agent'.Name
+            VerticalAlign: =VerticalAlign.Top
+            Width: =613
+            X: =27
+            Y: =398
+            ZIndex: =13
+
+        "'Colelction Center' As label":
+            Height: =39
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Collection Center: " & ThisItem.'Collection Center'.Name
+            VerticalAlign: =VerticalAlign.Top
+            Width: =613
+            X: =27
+            Y: =346
+            ZIndex: =14
+

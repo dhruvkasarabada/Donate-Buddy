@@ -1,0 +1,55 @@
+WelcomeDonationVolunteerScreen As screen:
+    BackgroundImage: =DonateBuddy
+    Fill: =RGBA(215, 223, 240, 1)
+
+    Label1_1 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        Size: =21
+        Text: ="WELCOME "
+        Width: =179
+        X: =90
+        Y: =129
+        ZIndex: =6
+
+    Label2_1 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        Size: =21
+        Text: =Upper(User().FullName)
+        Width: =353
+        X: =254
+        Y: =129
+        ZIndex: =7
+
+    Label3_1 As label:
+        Font: =Font.'Dancing Script'
+        Height: =77
+        Size: =40
+        Text: ="Donate Buddy"
+        Width: =308
+        X: =168
+        Y: =26
+        ZIndex: =8
+
+    Button3 As button:
+        Height: =70
+        OnSelect: =Navigate(DonationDriveBrowseGallery)
+        Size: =24
+        Text: ="Donate Items"
+        Width: =280
+        X: =34
+        Y: =976
+        ZIndex: =12
+
+    Button2 As button:
+        Height: =70
+        OnSelect: |-
+            =Launch("https://www.paypal.com/donate/?hosted_button_id=XV7QSP57RSJYW")
+        Size: =24
+        Text: ="Donate Money"
+        Width: =280
+        X: =338
+        Y: =976
+        ZIndex: =13
+

@@ -1,0 +1,86 @@
+WelcomeOrganizerScreen As screen:
+    BackgroundImage: =DonateBuddy
+    Fill: =RGBA(215, 223, 240, 1)
+
+    Label1 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        Size: =21
+        Text: ="WELCOME "
+        Width: =179
+        X: =85
+        Y: =130
+        ZIndex: =1
+
+    Button1 As button:
+        Height: =88
+        OnSelect: =Navigate(VolunteerBrowserScreen)
+        Size: =22
+        Text: ="Manage Volunteers"
+        Width: =166
+        X: =2
+        Y: =907
+        ZIndex: =3
+
+    Button1_2 As button:
+        Height: =85
+        OnSelect: =Navigate(DonationCenterBrowserScreen)
+        Size: =22
+        Text: |-
+            ="Manage
+            Donation Centers"
+        Width: =285
+        X: =19
+        Y: =1020
+        ZIndex: =5
+
+    Label2 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =65
+        Size: =21
+        Text: =Upper(User().FullName)
+        Width: =353
+        X: =244
+        Y: =130
+        ZIndex: =8
+
+    Button1_4 As button:
+        Height: =84
+        OnSelect: =Navigate(CollectionCenterBrowserScreen)
+        Size: =22
+        Text: ="Manage Collection Centers"
+        Width: =293
+        X: =332
+        Y: =1020
+        ZIndex: =10
+
+    Label3 As label:
+        Font: =Font.'Dancing Script'
+        Height: =77
+        Size: =40
+        Text: ="Donate Buddy"
+        Width: =308
+        X: =168
+        Y: =26
+        ZIndex: =11
+
+    Button1_1 As button:
+        Height: =88
+        OnSelect: =Navigate(DonationDriveBrowserScreen)
+        Size: =22
+        Text: ="Manage Donation Drives"
+        Width: =275
+        X: =184
+        Y: =907
+        ZIndex: =12
+
+    Button1_3 As button:
+        Height: =88
+        OnSelect: =Navigate(DonorDonationCountsReportScreen)
+        Size: =22
+        Text: ="View Reports"
+        Width: =164
+        X: =476
+        Y: =907
+        ZIndex: =13
+

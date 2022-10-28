@@ -1,0 +1,184 @@
+"VolunteerBrowserScreen As screen.'phoneLayout_HeaderAndGallery_ver3.0'":
+    BackgroundImage: =
+
+    RectQuickActionBar4 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName4 As label:
+        Height: =88
+        Size: =27
+        Text: ="Volunteers"
+        Width: =193
+        Wrap: =false
+        X: =97
+        ZIndex: =2
+
+    IconRefresh2 As icon.Reload:
+        AccessibleLabel: =IconRefresh2.Tooltip
+        Height: =88
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([@Volunteers])
+        PaddingBottom: =22
+        PaddingLeft: =22
+        PaddingRight: =22
+        PaddingTop: =22
+        TabIndex: =0
+        Tooltip: ="Refresh list"
+        Width: =88
+        X: =Parent.Width - IconNewItem2.Width - IconSortUpDown2.Width - IconRefresh2.Width
+        ZIndex: =3
+
+    IconSortUpDown2 As icon.ArrowsUpDown:
+        AccessibleLabel: =IconSortUpDown2.Tooltip
+        Height: =88
+        Icon: =Icon.Sort
+        OnSelect: |-
+            =UpdateContext({SortDescending1: !SortDescending1})
+        PaddingBottom: =26
+        PaddingLeft: =26
+        PaddingRight: =26
+        PaddingTop: =26
+        TabIndex: =0
+        Tooltip: =If(SortDescending1, "Sort list in reverse alphabetical order", "Sort list in alphabetical order")
+        Width: =88
+        X: =Parent.Width - IconNewItem2.Width - IconSortUpDown2.Width
+        ZIndex: =4
+
+    IconNewItem2 As icon.Add:
+        AccessibleLabel: =IconNewItem2.Tooltip
+        Height: =88
+        Icon: =Icon.Add
+        OnSelect: =NewForm(VolunteerEditForm);Navigate(VolunteerEditScreen, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Create new item"
+        Width: =88
+        X: =Parent.Width - IconNewItem2.Width
+        ZIndex: =5
+
+    TextSearchBox2 As text:
+        Align: =Left
+        Default: =""
+        Height: =68
+        HintText: ="Search items"
+        PaddingLeft: =70
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =7
+        RadiusTopLeft: =0
+        RadiusTopRight: =7
+        Size: =21
+        Width: =Parent.Width
+        Y: =RectQuickActionBar4.Height
+        ZIndex: =6
+
+    SearchIcon2 As icon.Search:
+        Height: =SearchIcon2.Width
+        Icon: =Icon.Search
+        PaddingBottom: =14
+        PaddingLeft: =14
+        PaddingRight: =14
+        PaddingTop: =14
+        Tooltip: ="Search"
+        Width: =TextSearchBox2.Height
+        X: =TextSearchBox2.X
+        Y: =TextSearchBox2.Y
+        ZIndex: =7
+
+    Rectangle12 As rectangle:
+        Height: =2
+        Width: =Parent.Width
+        Y: =TextSearchBox2.Y + TextSearchBox2.Height
+        ZIndex: =8
+
+    "VolunteerBrowseGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Fill: =RGBA(215, 223, 240, 1)
+        Height: =Parent.Height - VolunteerBrowseGallery.Y
+        Items: =SortByColumns(Search(Volunteers, TextSearchBox2.Text,"crf80_name"), "crf80_name")    
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Width: =Parent.Width
+        Y: =TextSearchBox2.Y + TextSearchBox2.Height
+        ZIndex: =9
+
+        Image1 As image:
+            Height: =128
+            Image: =ThisItem.Image
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Name As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Name
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image1.Width - 104
+            X: =Image1.X + Image1.Width + 24
+            Y: =44
+            ZIndex: =2
+
+        Role1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Role
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Name.Width
+            X: =Name.X
+            Y: =Name.Y + Name.Height + 4
+            ZIndex: =3
+
+        NextArrow2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate(VolunteerDetailScreen)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator2 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    IconBackarrow1_2 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Switch(myRole, "Organizer", Navigate(WelcomeOrganizerScreen), "Donation Volunteer", Navigate(WelcomeDonationVolunteerScreen))
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Back to list"
+        Width: =88
+        ZIndex: =10
+

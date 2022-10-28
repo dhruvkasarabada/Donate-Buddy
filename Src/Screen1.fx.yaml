@@ -1,0 +1,164 @@
+Screen1 As screen:
+
+    "'Coll Centers Sorted By Distance' As dataTable.datatable":
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        HeadingSize: =21
+        Height: =549
+        Items: =CollCentersSortedByDistance
+        Size: =21
+        Width: =640
+        X: =0
+        Y: =574
+        ZIndex: =1
+
+        crf80_name_Column2 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="crf80_name"
+            FieldName: ="crf80_name"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.crf80_name
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+        crd95_street_Column2 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="crd95_street"
+            FieldName: ="crd95_street"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.crd95_street
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+        crd95_city_Column2 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="crd95_city"
+            FieldName: ="crd95_city"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.crd95_city
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =8
+
+        distance_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="distance"
+            FieldName: ="distance"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.distance
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+    "'Coll Centers' As dataTable.datatable":
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        HeadingSize: =21
+        Height: =526
+        Items: =CollCenters
+        Size: =21
+        Width: =640
+        X: =0
+        Y: =0
+        ZIndex: =2
+
+        crf80_name_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="crf80_name"
+            FieldName: ="crf80_name"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.crf80_name
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        crd95_street_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="crd95_street"
+            FieldName: ="crd95_street"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.crd95_street
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        crd95_city_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="crd95_city"
+            FieldName: ="crd95_city"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.crd95_city
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        Lat_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Lat"
+            FieldName: ="Lat"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.Lat
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        Long_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Long"
+            FieldName: ="Long"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =ThisItem.Long
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+    Label5_1 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =47
+        Size: =19
+        Text: |-
+            ="Nearest Collection Center: " & First(CollCentersSortedByDistance).Name
+        Width: =640
+        Y: =1007
+        ZIndex: =4
+
