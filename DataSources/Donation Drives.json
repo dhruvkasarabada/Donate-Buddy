@@ -1,0 +1,104 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crd95_donationdrives",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crd95_donationdrive",
+    "MaxGetRowsCount": 500,
+    "Name": "Donation Drives",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "crd95_crd95_donation_DriveName_crd95_donationdr": "Donations",
+      "crd95_crd95_donationdestination_DriveName_crd95": "Donation Centers",
+      "crd95_crf80_collectioncenter_DriveName_crd95_do": "Collection Centers",
+      "crd95_description": "Description",
+      "crd95_donationdrive_AsyncOperations": "System Jobs",
+      "crd95_donationdrive_BulkDeleteFailures": "Bulk Delete Failures",
+      "crd95_donationdrive_DuplicateBaseRecord": "Duplicate Records (crd95_donationdrive_DuplicateBaseRecord)",
+      "crd95_donationdrive_DuplicateMatchingRecord": "Duplicate Records (crd95_donationdrive_DuplicateMatchingRecord)",
+      "crd95_donationdrive_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crd95_donationdrive_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crd95_donationdrive_ProcessSession": "Process Sessions",
+      "crd95_donationdrive_SyncErrors": "Sync Errors",
+      "crd95_donationdriveid": "Donation Drive",
+      "crd95_drivedate": "Drive Date",
+      "crd95_image": "Image",
+      "crd95_imageid": "crd95_ImageId",
+      "crd95_name": "Name",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Donation Drives",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Donation Drives (Views)",
+    "Name": "_crd95_donationdrive_views",
+    "RelatedEntityName": "Donation Drives",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "3d89f7a5-1e3a-489d-9b4d-4f3784236d84": "Inactive Donation Drives",
+      "42a5a060-35ea-4401-8201-9bd774bee187": "Donation Drive Associated View",
+      "6131cd98-6779-46c7-8ecf-83c0f3904a9b": "Donation Drive Advanced Find View",
+      "afc8106c-aafd-4c2e-8fb3-fb7e1e3f3d2b": "Donation Drive Lookup View",
+      "dd2e9f40-a820-4755-9af2-c3c7549d5e1e": "Active Donation Drives"
+    }
+  },
+  {
+    "DisplayName": "Status (Donation Drives)",
+    "Name": "crd95_donationdrive_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Donation Drives"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Donation Drives",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Donation Drives)",
+    "Name": "crd95_donationdrive_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Donation Drives"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Donation Drives",
+    "Type": "OptionSetInfo"
+  }
+]

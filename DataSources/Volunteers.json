@@ -1,0 +1,126 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crf80_volunteers",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crf80_volunteer",
+    "MaxGetRowsCount": 500,
+    "Name": "Volunteers",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "crd95_crd95_donation_DeliveryAgent_crf80_volunt": "Donations (crd95_crd95_donation_DeliveryAgent_crf80_volunt)",
+      "crd95_crd95_donation_Donator_crf80_volunteer": "Donations (crd95_crd95_donation_Donator_crf80_volunteer)",
+      "crd95_firstname": "First Name",
+      "crd95_image": "Image",
+      "crd95_imageid": "crd95_ImageId",
+      "crd95_lastname": "Last Name",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crf80_crf80_collectioncenter_CollectionCenterMa": "Collection Centers",
+      "crf80_email": "E-Mail",
+      "crf80_name": "Name",
+      "crf80_role": "Role",
+      "crf80_volunteer_AsyncOperations": "System Jobs",
+      "crf80_volunteer_BulkDeleteFailures": "Bulk Delete Failures",
+      "crf80_volunteer_DuplicateBaseRecord": "Duplicate Records (crf80_volunteer_DuplicateBaseRecord)",
+      "crf80_volunteer_DuplicateMatchingRecord": "Duplicate Records (crf80_volunteer_DuplicateMatchingRecord)",
+      "crf80_volunteer_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crf80_volunteer_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crf80_volunteer_ProcessSession": "Process Sessions",
+      "crf80_volunteer_SyncErrors": "Sync Errors",
+      "crf80_volunteerid": "Volunteer",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Volunteers",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Volunteers (Views)",
+    "Name": "_crf80_volunteer_views",
+    "RelatedEntityName": "Volunteers",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "82ccf466-e136-4a1b-99e8-a6a97029c46e": "Inactive Volunteers",
+      "8cf0734c-9e5d-4a8f-856f-71b6fdfbc09c": "Volunteer Advanced Find View",
+      "a74c9ab2-e108-4f0b-ab57-7dff96a0ef5b": "Volunteer Lookup View",
+      "e669b906-f5cc-4be7-935f-2cec38caecef": "Active Volunteers",
+      "f20d5912-4ac3-4856-bc7e-a9bb6807f66e": "Volunteer Associated View"
+    }
+  },
+  {
+    "DisplayName": "Role",
+    "Name": "crf80_role",
+    "OptionSetInfoNameMapping": {
+      "182340000": "Donation Volunteer",
+      "182340002": "Organizer"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crf80_role",
+        "OptionSetReferenceEntityName": "Volunteers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crf80_role",
+    "RelatedEntityName": "Volunteers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Volunteers)",
+    "Name": "crf80_volunteer_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Volunteers"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Volunteers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Volunteers)",
+    "Name": "crf80_volunteer_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Volunteers"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Volunteers",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,105 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crf80_collectioncenters",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crf80_collectioncenter",
+    "MaxGetRowsCount": 500,
+    "Name": "Collection Centers",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "crd95_city": "City",
+      "crd95_country": "Country",
+      "crd95_crd95_donation_CollectionCenter_crf80_col": "Donations",
+      "crd95_DriveName": "Drive Name",
+      "crd95_postalcode": "Postal Code",
+      "crd95_state": "State",
+      "crd95_street": "Street",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crf80_collectioncenter_AsyncOperations": "System Jobs",
+      "crf80_collectioncenter_BulkDeleteFailures": "Bulk Delete Failures",
+      "crf80_collectioncenter_DuplicateBaseRecord": "Duplicate Records (crf80_collectioncenter_DuplicateBaseRecord)",
+      "crf80_collectioncenter_DuplicateMatchingRecord": "Duplicate Records (crf80_collectioncenter_DuplicateMatchingRecord)",
+      "crf80_collectioncenter_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crf80_collectioncenter_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crf80_collectioncenter_ProcessSession": "Process Sessions",
+      "crf80_collectioncenter_SyncErrors": "Sync Errors",
+      "crf80_collectioncenterid": "Collection Center",
+      "crf80_CollectionCenterManager": "Manager",
+      "crf80_name": "Name",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Collection Centers",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Collection Centers (Views)",
+    "Name": "_crf80_collectioncenter_views",
+    "RelatedEntityName": "Collection Centers",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "39e8850e-30a9-4049-b7e0-6f18b5460f7f": "Collection Center Associated View",
+      "6e86c4c7-c4b9-4732-80c1-cfd63dda58da": "Collection Center Lookup View",
+      "8e4dd093-32a4-4c8f-8f41-5611d310efe6": "Collection Center Advanced Find View",
+      "ac70b028-6272-47cd-9add-57be52f4df74": "Active Collection Centers",
+      "be9ab225-2990-49d3-bd22-a316e712e489": "Inactive Collection Centers"
+    }
+  },
+  {
+    "DisplayName": "Status (Collection Centers)",
+    "Name": "crf80_collectioncenter_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Collection Centers"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Collection Centers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Collection Centers)",
+    "Name": "crf80_collectioncenter_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Collection Centers"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Collection Centers",
+    "Type": "OptionSetInfo"
+  }
+]

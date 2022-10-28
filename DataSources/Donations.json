@@ -1,0 +1,131 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crd95_donations",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crd95_donation",
+    "MaxGetRowsCount": 500,
+    "Name": "Donations",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "crd95_CollectionCenter": "Collection Center",
+      "crd95_collectioncenterdropofftime": "Collection Center Drop-off Time",
+      "crd95_comments": "Comments",
+      "crd95_DeliveryAgent": "Delivery Agent",
+      "crd95_donation_AsyncOperations": "System Jobs",
+      "crd95_donation_BulkDeleteFailures": "Bulk Delete Failures",
+      "crd95_donation_DuplicateBaseRecord": "Duplicate Records (crd95_donation_DuplicateBaseRecord)",
+      "crd95_donation_DuplicateMatchingRecord": "Duplicate Records (crd95_donation_DuplicateMatchingRecord)",
+      "crd95_donation_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crd95_donation_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crd95_donation_ProcessSession": "Process Sessions",
+      "crd95_donation_SyncErrors": "Sync Errors",
+      "crd95_DonationCenter": "Donation Center",
+      "crd95_donationcenterdeliverytime": "Donation Center Delivery Time",
+      "crd95_donationid": "Donation",
+      "crd95_Donator": "Donator",
+      "crd95_DriveName": "Drive Name",
+      "crd95_id": "Id",
+      "crd95_image": "Image",
+      "crd95_imageid": "crd95_ImageId",
+      "crd95_itemtype": "Item Type",
+      "crd95_name": "Name",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Donations",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Donations (Views)",
+    "Name": "_crd95_donation_views",
+    "RelatedEntityName": "Donations",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1911a0f3-db39-431a-b1ae-f738cdf80f59": "Inactive Donations",
+      "2ddead3c-b989-4f3a-8e89-3980ebffe0f8": "Donation Associated View",
+      "31a262a4-72ee-4938-9ec2-b9d3e841ba50": "Active Donations",
+      "d67def0f-de56-4dee-9d37-7ed37e18b126": "Donation Lookup View",
+      "dbbe5e1c-ce8a-4e0a-9fa2-811cd9e6d4a2": "Donation Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Donations)",
+    "Name": "crd95_donation_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Donations"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Donations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Donations)",
+    "Name": "crd95_donation_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Donations"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Donations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Donation Item Type",
+    "Name": "crd95_drivetype",
+    "OptionSetInfoNameMapping": {
+      "966880000": "Food",
+      "966880001": "Clothes",
+      "966880002": "Books",
+      "966880004": "Toys"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crd95_itemtype",
+        "OptionSetReferenceEntityName": "Donations"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crd95_itemtype",
+    "RelatedEntityName": "Donations",
+    "Type": "OptionSetInfo"
+  }
+]

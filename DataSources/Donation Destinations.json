@@ -1,0 +1,104 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crd95_donationdestinations",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crd95_donationdestination",
+    "MaxGetRowsCount": 500,
+    "Name": "Donation Destinations",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "crd95_city": "City",
+      "crd95_country": "Country",
+      "crd95_crd95_donation_DonationCenter_crd95_donat": "Donations",
+      "crd95_donationdestination_AsyncOperations": "System Jobs",
+      "crd95_donationdestination_BulkDeleteFailures": "Bulk Delete Failures",
+      "crd95_donationdestination_DuplicateBaseRecord": "Duplicate Records (crd95_donationdestination_DuplicateBaseRecord)",
+      "crd95_donationdestination_DuplicateMatchingRecord": "Duplicate Records (crd95_donationdestination_DuplicateMatchingRecord)",
+      "crd95_donationdestination_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crd95_donationdestination_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crd95_donationdestination_ProcessSession": "Process Sessions",
+      "crd95_donationdestination_SyncErrors": "Sync Errors",
+      "crd95_donationdestinationid": "Donation Destination",
+      "crd95_DriveName": "Drive Name",
+      "crd95_name": "Name",
+      "crd95_postalcode": "Postal code",
+      "crd95_state": "State",
+      "crd95_street": "Street",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Donation Destinations",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Donation Destinations (Views)",
+    "Name": "_crd95_donationdestination_views",
+    "RelatedEntityName": "Donation Destinations",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "4dfdd47f-5594-4f5a-b09b-cd63dcd33bc8": "Inactive Donation Destinations",
+      "58b04a94-c6ba-4e16-95ae-66c87f74aa14": "Donation Destination Associated View",
+      "776be708-a81c-4c39-aada-786a8f58f187": "Active Donation Destinations",
+      "e856ac28-7155-418c-8154-3fc6cac9c01e": "Donation Destination Advanced Find View",
+      "ecbfd948-1b08-48a4-8ea2-088ec94d42b9": "Donation Destination Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Donation Destinations)",
+    "Name": "crd95_donationdestination_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Donation Destinations"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Donation Destinations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Donation Destinations)",
+    "Name": "crd95_donationdestination_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Donation Destinations"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Donation Destinations",
+    "Type": "OptionSetInfo"
+  }
+]
