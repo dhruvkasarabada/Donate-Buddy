@@ -18,6 +18,8 @@ The app includes [custom logic](https://github.com/dhruvkasarabada/Donate-Buddy/
   * Calculating shortest distance from the device's current location to each of the collection centers and donation centers
   * Generating setup data for report generation
   
+  The .yaml files located under [Src](https://github.com/dhruvkasarabada/Donate-Buddy/tree/main/Src) has the App start logic as well as the various screens used in the app.
+  
   
 
 
