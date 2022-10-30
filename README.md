@@ -6,7 +6,7 @@ The file structure in this repository was created by running the below command o
 
 pac canvas unpack --msapp <name of .msapp file> --sources <output folder>
   
-For more information, please refer to this - https://github.com/microsoft/PowerApps-Language-Tooling/blob/master/README.md
+For more information, please refer to the [Power Apps Language Tooling Documentation](https://github.com/microsoft/PowerApps-Language-Tooling/blob/master/README.md)
   
 The app includes a lot of [custom logic](https://github.com/dhruvkasarabada/Donate-Buddy/blob/main/customlogic.txt) written in PowerFx, that is used to -
   * Set global variables
