@@ -9,14 +9,14 @@ pac canvas unpack --msapp <name of .msapp file> --sources <output folder>
 For more information, please refer to this - https://github.com/microsoft/PowerApps-Language-Tooling/blob/master/README.md
   
 The app includes a lot of custom logic code (see customlogic.txt) written in PowerFx, that is used to -
-  (a) Set global variables
-  (b) Customize the startup experience
-      (i) Welcome screen is different for Organizer vs. Donation Volunteer
-      (ii) Auto-creation of entries into the Volunteer table at first-time login
-  (c) Control visibility (Only Organizer can create new donation drives)
-  (d) Search, Sort, Filter, Group on data
-  (e) Calculating shortest distance from the device's current location to each of the collection centers and donation centers
-  (f) Generating setup data for report generation
+  *(a) Set global variables
+  *(b) Customize the startup experience
+      *(i) Welcome screen is different for Organizer vs. Donation Volunteer
+      *(ii) Auto-creation of entries into the Volunteer table at first-time login
+  *(c) Control visibility (Only Organizer can create new donation drives)
+  *(d) Search, Sort, Filter, Group on data
+  *(e) Calculating shortest distance from the device's current location to each of the collection centers and donation centers
+  *(f) Generating setup data for report generation
   
   
 
