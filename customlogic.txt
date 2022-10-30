@@ -1,46 +1,46 @@
-Set Global Variables
+#Set Global Variables
 Set(myRole, Text(If(IsBlank(LookUp(Volunteers,'E-Mail'=User().Email).Role), "Donation Volunteer", LookUp(Volunteers,'E-Mail'=User().Email).Role)));
 
 Set(currentUser, User());
 
-Auto-create record in table
+#Auto-create record in table
 If(IsBlank(LookUp(Volunteers,'E-Mail'=User().Email).Role), 
 Patch(
     Volunteers,
     Defaults(Volunteers),
     {Name: User().FullName, 'E-Mail': User().Email, Role: Role.'Donation Volunteer'}))
 
-Customize Welcome screen
+#Customize Welcome screen
 If(Text(LookUp(Volunteers,'E-Mail'=User().Email).Role)="Organizer",WelcomeOrganizerScreen, WelcomeDonationVolunteerScreen)
 
-Search and Filter donations
+#Search and Filter donations
 Search(Filter(Donations, 'Drive Name'.Name=driveName), TextSearchBox5.Text, "crd95_name", "crd95_comments")
 
-Sorting in Alphabetical order
+#Sorting in Alphabetical order
 SortByColumns(Search(Volunteers, TextSearchBox2.Text,"crf80_name"), "crf80_name") 
 
-Choice Filter
+#Choice Filter
 Filter('Collection Centers', 'Drive Name'.Name=driveName)
 
-Auto-select Donator upon new donation
+#Auto-select Donator upon new donation
 If(IsBlank(ThisItem.Donator),LookUp(Volunteers, 'E-Mail'=User().Email), ThisItem.Donator)
 
-Auto-select Drive Name upon new donation
+#Auto-select Drive Name upon new donation
 LookUp('Donation Drives', Name=driveName)
 
-Control visibility of certain operations (like creating a new drive)
+#Control visibility of certain operations (like creating a new drive)
 Visibility: myRole="Organizer"
 
-Customize Screen Headers
+#Customize Screen Headers
 If(VolunteerEditForm.Mode=FormMode.New, "New", "Edit") & " Volunteer"
 
-Custom Text
+#Custom Text
 "View " & If(myRole="Organizer", "All", "My") & " Donations"
 
-Delete Logic
+#Delete Logic
 Remove('Donation Drives', DonationDriveBrowseGallery.Selected); If (IsEmpty(Errors('Donation Drives', DonationDriveBrowseGallery.Selected)), Back())
 
-Using BingMaps Connector
+#Using BingMaps Connector
 
 ClearCollect(CollCenters,AddColumns('Collection Centers',"Lat",BingMaps.GetLocationByAddress({addressLine:Street,locality:City,countryRegion:Country}).point.coordinates.latitude,"Long",BingMaps.GetLocationByAddress({addressLine:Street,locality:City,countryRegion:Country}).point.coordinates.longitude));
 
@@ -58,7 +58,7 @@ Filter(DonCentersSortedByDistance, 'Drive Name'.Name = driveName)
 
 "Nearest Donation Center: " & First(Filter(DonCentersSortedByDistance, 'Drive Name'.Name=ThisItem.Name)).Name
 
-Reporting
+#Reporting
 
 ClearCollect(DonationsWithNames, AddColumns(Donations, "DonatorName", Donator.Name, "DeliveryAgentName", 'Delivery Agent'.Name, "CollectionCenterName", 'Collection Center'.Name,"DonationCenterName", 'Donation Center'.Name));
 
