@@ -8,7 +8,7 @@ pac canvas unpack --msapp <name of .msapp file> --sources <output folder>
   
 For more information, please refer to this - https://github.com/microsoft/PowerApps-Language-Tooling/blob/master/README.md
   
-The app includes a lot of <a name="[custom logic](https://github.com/dhruvkasarabada/Donate-Buddy/blob/main/customlogic.txt)"></a> written in PowerFx, that is used to -
+The app includes a lot of <a name="[custom logic](https://github.com/dhruvkasarabada/Donate-Buddy/blob/main/customlogic.txt)">custom logic</a> written in PowerFx, that is used to -
   * Set global variables
   * Customize the startup experience
       * Welcome screen is different for Organizer vs. Donation Volunteer
