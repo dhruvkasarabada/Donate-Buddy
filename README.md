@@ -11,8 +11,8 @@ For more information, please refer to this - https://github.com/microsoft/PowerA
 The app includes a lot of <a name="[custom logic](https://github.com/dhruvkasarabada/Donate-Buddy/blob/main/customlogic.txt)"></a> written in PowerFx, that is used to -
   * Set global variables
   * Customize the startup experience
-      * (i) Welcome screen is different for Organizer vs. Donation Volunteer
-      * (ii) Auto-creation of entries into the Volunteer table at first-time login
+      * Welcome screen is different for Organizer vs. Donation Volunteer
+      * Auto-creation of entries into the Volunteer table at first-time login
   * Control visibility (Only Organizer can create new donation drives)
   * Search, Sort, Filter, Group on data
   * Calculating shortest distance from the device's current location to each of the collection centers and donation centers
