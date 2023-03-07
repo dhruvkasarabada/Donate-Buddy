@@ -21,6 +21,8 @@ The app includes [custom logic](https://github.com/dhruvkasarabada/Donate-Buddy/
   The .yaml files located under [Src](https://github.com/dhruvkasarabada/Donate-Buddy/tree/main/Src) has the App start logic as well as the various screens used in the app.
   The .json files located under [Datasources](https://github.com/dhruvkasarabada/Donate-Buddy/tree/main/DataSources) represents all the tables along with their columns used in the app.
   
+  Here's a link to my video submission at the Congressional App Challenge 2022 - https://www.youtube.com/watch?v=GNCtCNez0xw&t=2s
+  
   
 
 
